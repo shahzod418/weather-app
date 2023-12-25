@@ -44,12 +44,15 @@ watchOnce(coords, () => {
 </script>
 
 <template>
-  <WeatherSearchInput class="absolute w-1/3" @update="handleSearch" />
-  <div class="mt-10 flex justify-center">
+  <WeatherSearchInput
+    class="absolute w-full bg-white md:w-1/3 dark:bg-slate-950"
+    @update="handleSearch"
+  />
+  <div class="mt-24 flex justify-center">
     <Skeleton v-if="isFetching" class="h-64 w-96" />
     <WeatherDayCard v-if="data" :data="data.day" />
   </div>
-  <ScrollArea class="mx-auto mt-10 w-3/5 p-3">
+  <ScrollArea class="mt-10 md:mx-auto md:w-3/5 md:p-3">
     <div v-if="isFetching" class="flex gap-10">
       <Skeleton v-for="index in 6" :key="index" class="h-40 w-36" />
     </div>

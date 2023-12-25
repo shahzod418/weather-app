@@ -6,7 +6,7 @@ import { AppFooter } from '@components/Footer'
 <template>
   <div class="flex min-h-dvh w-dvw flex-col px-6 dark:bg-slate-950">
     <AppHeader />
-    <div class="relative grow overflow-x-scroll">
+    <div class="relative grow">
       <slot />
     </div>
     <AppFooter />

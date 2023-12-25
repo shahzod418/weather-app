@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-
 import { ThermometerSun } from 'lucide-vue-next'
 import { ThermometerSnowflake } from 'lucide-vue-next'
 
@@ -18,12 +16,12 @@ const { data } = defineProps<{ data: WeatherDayData }>()
 </script>
 
 <template>
-  <Card>
+  <Card class="w-full md:w-min">
     <CardHeader>
       <CardTitle>{{ data.country }} / {{ data.region }}</CardTitle>
       <CardDescription>{{ data.text }}</CardDescription>
     </CardHeader>
-    <CardContent class="flex flex-col px-20">
+    <CardContent class="flex flex-col md:px-20">
       <div class="flex justify-center text-7xl">
         <div v-if="Number(data.temp_c) > 0">
           <ThermometerSun :size="100" />
